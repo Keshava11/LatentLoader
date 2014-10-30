@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.0.1"
+
+    defaultConfig {
+        applicationId "com.latentloader"
+        minSdkVersion 9
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:21.0.+'
+    compile 'com.google.android.gms:play-services:+'
+
+    // Library for using Youtube data api
+    compile 'com.google.apis:google-api-services-youtube:v3-rev120-1.19.0'
+    compile 'com.google.http-client:google-http-client-android:+'
+    compile 'com.google.api-client:google-api-client-android:+'
+    compile 'com.google.api-client:google-api-client-gson:+'
+
+    // Library for using CardView
+    compile 'com.android.support:cardview-v7:21.0.+'
+
+    // Image loading library
+    compile 'com.squareup.picasso:picasso:2.3.+'
+}
